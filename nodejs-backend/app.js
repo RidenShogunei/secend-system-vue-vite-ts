@@ -24,15 +24,15 @@ conn.connect(err => {
       conn.query('SELECT 1');
     }, 5000);
 
-    // 连接成功后导入 diary 路由
-    const diaryRouter = require('./modle/diary')(conn);
-    const personalRouter = require('./modle/personal')(conn);
+    // 连接成功后导入 genshin 路由
+    const genshinRouter = require('./modle/genshin')(conn);
+    const starrailalRouter = require('./modle/starrail')(conn);
 
-    app.use('/diary', diaryRouter);
-    app.use('/person',personalRouter);
+    app.use('/genshin', genshinRouter);
+    app.use('/starrail',starrailalRouter);
   }
 });
 
 app.listen(4000, () => {
-  console.log('Server is running on http://localhost:8888');
+  console.log('Server is running on http://localhost:4000');
 });

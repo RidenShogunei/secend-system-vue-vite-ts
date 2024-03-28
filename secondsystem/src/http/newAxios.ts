@@ -18,6 +18,7 @@ newAxios.interceptors.request.use(
 
 newAxios.interceptors.response.use(
     response => {
+        console.log(response.data['code'] );
         if (response.data['code'] === 200) {
             return Promise.resolve(response)
         } else {
