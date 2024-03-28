@@ -14,7 +14,7 @@
         </template>
       </a-list>
       <br />
-      <a-pagination v-model:current="current" :total="totalPages" @change="onChange" />
+      <a-pagination v-model:current="current" :total="totalPages" @change="onChange" show-less-items />
     </a-card>
   </div>
 </template>
