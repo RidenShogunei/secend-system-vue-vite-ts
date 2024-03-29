@@ -22,7 +22,8 @@ newAxios.interceptors.response.use(
         if (response.data['code'] === 200) {
             return Promise.resolve(response)
         } else {
-            return Promise.reject(response)
+            console.log("疑似有问题")
+            return Promise.resolve(response)
         }
     },
     error => {

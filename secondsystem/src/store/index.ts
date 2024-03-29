@@ -4,13 +4,17 @@ import {createStore} from 'vuex'
 const store = createStore({
     state() {
         return {
-            page: '1'
+            page: '1',
+            response: null,
         }
     },
     mutations: {
       updatePage(state, page) {
         state.page = page;
-      }
+      },
+      setResponse(state, response) {
+        state.response = response;
+      },
     }
 })
  

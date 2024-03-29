@@ -26,13 +26,13 @@ const current = ref(1);
 // 创建响应式数据
 // 初始化参数为一个空对象
 const params = ref({});
-const itemsPerPage = 8;
+const itemsPerPage = ref(10);
 const totalPages = ref(0);
 const allData = ref<string[]>([]);
 const currentData = computed(() => {
   // 计算当前页的数据开始和结束的索引
-  const start = (current.value - 1) * itemsPerPage;
-  const end = start + itemsPerPage;
+  const start = (current.value - 1) * itemsPerPage.value;
+  const end = start + itemsPerPage.value;
   // 从 allData 中取出对应的部分
   return allData.value.slice(start, end);
 });
@@ -53,13 +53,16 @@ const callApi = async () => {
     takeStrings.every((item) => typeof item === "string")
   ) {
     allData.value = takeStrings;
-    totalPages.value = Math.ceil(takeStrings.length / itemsPerPage);
+    totalPages.value = Math.ceil(takeStrings.length);
+    console.log("总共"+totalPages.value)
   } else {
     console.error("API response is not a string array");
   }
 };
-const onChange = (page: number) => {
+const onChange = (page: number,pagesize :number) => {
   current.value = page;
+  itemsPerPage.value=pagesize;
+  console.log("页面大小"+pagesize);
 };
 const onSearch = (searchValue: string) => {
   // 更新 params 的值，加入了语言选择
@@ -70,7 +73,6 @@ const onSearch = (searchValue: string) => {
 
 <style scoped>
 .starrail {
-  margin-top: 1%;
   align-items: center;
   display: flex;
   flex-direction: column;

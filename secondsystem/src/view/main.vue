@@ -31,6 +31,8 @@ const dynamicComponent = computed(() => {
       return defineAsyncComponent(() => import('../view/genshin/genshinSearh.vue'))
     case '2':
       return defineAsyncComponent(() => import('../view/starrail/starrailSearch.vue'))
+    case '3':
+      return defineAsyncComponent(() => import('../view/starrailrole/index.vue'))
     default:
       return null
   }
@@ -38,10 +40,14 @@ const dynamicComponent = computed(() => {
 </script>
 
 <style scoped>
+  .siderStyle,
+  .contentStyle {
+    min-height: 100vh; /* 100% of the viewport height */
+  }
 .main{
   /* 将 div.main 设为全屏 */
-  height: 100vh; /* 100% viewport height */
-  width: 100vw; /* 100% viewport width */
+  height: 100%; /* 100% viewport height */
+  width: 100%; /* 100% viewport width */
   display: flex;
   flex-direction: column;
 }

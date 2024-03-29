@@ -46,26 +46,25 @@ const items = reactive([
         children: [
             {
                 key: "3",
-                label: "小游戏 1",
-                title: "小游戏 1",
+                label: "星穹铁道数据查询",
+                title: "星穹铁道数据查询",
             },
             {
                 key: "4",
-                label: "小游戏 2",
-                title: "小游戏 2",
+                label: "原神数据查询",
+                title: "原神数据查询",
             },
-            // 根据你的需求添加更多的小游戏
         ],
     },
     {
         key: "5",
-        label: "记事本",
-        title: "记事本",
+        label: "图片搜索",
+        title: "图片搜索",
     },
     {
         key: "6",
-        label: "日程表",
-        title: "日程表",
+        label: "英汉语录",
+        title: "英汉语录",
     },
     {
         key: "7",

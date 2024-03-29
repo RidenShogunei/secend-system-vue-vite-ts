@@ -6,7 +6,7 @@ import newAxios from "./newAxios";//引入axios实例
  * @param {String} url [请求的url地址]
  * @param {Object} params [请求时携带的参数]
  */
-export function get(url: string, params: any) {
+export function get(url: string, params?: any) {
     return new Promise((resolve, reject) => {
         newAxios.get(
             url,

@@ -19,7 +19,7 @@ conn.connect(err => {
 
 function insertDataFromFile(conn) {
   // 读取json文件
-  fs.readFile('data.json', 'utf8', (err, data) => {
+  fs.readFile('data3.json', 'utf8', (err, data) => {
     if (err) {
       console.log(`Error reading file from disk: ${err}`);
     } else {
@@ -31,7 +31,7 @@ function insertDataFromFile(conn) {
       let id=1;
       // 对 values 进行处理，插入到数据库中
       values.forEach(value => {
-        let query = "INSERT INTO starrail (content) VALUES (?)";
+        let query = "INSERT INTO genshin (sentence, language) VALUES (?, 'english')";
   
         // 执行 SQL query
         conn.query(query, value, (err, res) => {
