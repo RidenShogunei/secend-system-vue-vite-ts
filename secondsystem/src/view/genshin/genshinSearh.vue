@@ -102,7 +102,7 @@ const onSearch = (searchValue: string) => {
   flex-direction: column;
   justify-items: center;
   align-items: center;
-  width: 50%;
+  width: 80%;
   margin-top: 2%;
 }
 
@@ -123,7 +123,7 @@ const onSearch = (searchValue: string) => {
 }
 
 .respond {
-  width: 50%;
+  width: 80%;
   margin-top: 2%;
 }
 </style>

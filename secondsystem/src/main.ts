@@ -5,4 +5,4 @@ import router from './router'
 import store from './store' 
 const app = createApp(App)
 app.use(router).use(store).use(Antd).mount('#app')
-document.title = "二系统";
+document.title = "游戏助手专区";

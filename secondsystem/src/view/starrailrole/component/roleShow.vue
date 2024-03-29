@@ -1,22 +1,37 @@
 <template>
-  <a-card>
-    <a-descriptions title="User Info">
-      <a-descriptions-item label="UserName">Zhou Maomao</a-descriptions-item>
-      <a-descriptions-item label="Telephone">1810000000</a-descriptions-item>
-      <a-descriptions-item label="Live">Hangzhou, Zhejiang</a-descriptions-item>
-      <a-descriptions-item label="Remark">empty</a-descriptions-item>
-      <a-descriptions-item label="Address">
-        No. 18, Wantang Road, Xihu District, Hangzhou, Zhejiang, China
+  <a-card class="com">
+    <a-descriptions title="人物信息">
+      <a-descriptions-item label="昵称">{{ data.nickname }}</a-descriptions-item>
+      <a-descriptions-item label="UID">{{ data.uid }}</a-descriptions-item>
+      <a-descriptions-item label="世界等级">{{ data.worldLevel }}</a-descriptions-item>
+      <a-descriptions-item label="签名">{{ data.signature }}</a-descriptions-item>
+      <a-descriptions-item label="等级">
+        {{ data.level }}
       </a-descriptions-item>
     </a-descriptions>
   </a-card>
 </template>
 
 <script lang="ts" setup>
-
-const store=useStore();
-const data = ref();
-
+const store = useStore();
+const data = computed(() => {
+  if (store.state.response && typeof store.state.response === 'object') {
+    return store.state.response;
+  } else {
+    return {
+      nickname: "exampleUser",
+      roleID: "123456",
+      worldLevel: 30,
+      signature: "hello",
+      uid: "123456",
+      level:"70",
+    };
+  }
+});
 </script>
 
-<style scoped></style>
+<style scoped>
+.com{
+  background-color: rgba(55, 85, 34, 0.5);
+}
+</style>
