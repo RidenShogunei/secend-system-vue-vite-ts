@@ -12,5 +12,6 @@ declare module 'vue' {
     MenuPart: typeof import('./../components/menuPart.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    WaitPage: typeof import('./../components/waitPage.vue')['default']
   }
 }

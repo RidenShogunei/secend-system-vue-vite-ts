@@ -41,25 +41,25 @@ const items = reactive([
     },
     {
         key: "sub1",
-        label: "游戏区",
-        title: "游戏区",
+        label: "铁道区",
+        title: "铁道区",
         children: [
             {
                 key: "3",
-                label: "星穹铁道数据查询",
-                title: "星穹铁道数据查询",
+                label: "星穹铁道账号查询",
+                title: "星穹铁道账号查询",
             },
             {
                 key: "4",
-                label: "原神数据查询",
-                title: "原神数据查询",
+                label: "角色详细信息",
+                title: "角色详细信息",
             },
         ],
     },
     {
         key: "5",
-        label: "图片搜索",
-        title: "图片搜索",
+        label: "股票展示",
+        title: "股票展示",
     },
     {
         key: "6",

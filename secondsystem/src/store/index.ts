@@ -6,6 +6,7 @@ const store = createStore({
         return {
             page: '1',
             response: null,
+            stock:null,
         }
     },
     mutations: {
@@ -15,6 +16,9 @@ const store = createStore({
       setResponse(state, response) {
         state.response = response;
       },
+      updatestock(state,stock){
+        state.stock=stock;
+      }
     }
 })
  

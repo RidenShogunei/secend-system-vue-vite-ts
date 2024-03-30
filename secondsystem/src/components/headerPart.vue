@@ -1,6 +1,6 @@
 <template>
     <div class="header">
-    <div class="title">游戏助手专区</div>
+    <div class="title">二系统</div>
     </div>
 </template>
 

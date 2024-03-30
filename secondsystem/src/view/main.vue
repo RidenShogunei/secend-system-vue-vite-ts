@@ -4,7 +4,7 @@
       <a-layout-header class="headerStyle">
         <HeaderPart></HeaderPart>
       </a-layout-header>
-  
+
       <a-layout>
         <a-layout-sider class="siderStyle">
           <MenuPart></MenuPart>
@@ -13,11 +13,11 @@
           <component :is="dynamicComponent"></component>
         </a-layout-content>
       </a-layout>
-  
+
       <a-layout-footer class="footerStyle">
         <FooterPart></FooterPart>
       </a-layout-footer>
-  
+
     </a-layout>
   </div>
 </template>
@@ -33,21 +33,29 @@ const dynamicComponent = computed(() => {
       return defineAsyncComponent(() => import('../view/starrail/starrailSearch.vue'))
     case '3':
       return defineAsyncComponent(() => import('../view/starrailrole/index.vue'))
+    case '4':
+      return defineAsyncComponent(() => import('../view/detile/index.vue'))
+    case '5':
+      return defineAsyncComponent(() => import('../view/stock/index.vue'))
     default:
-      return null
+      return defineAsyncComponent(() => import('../view/detile/index.vue'))
   }
 })
 </script>
 
 <style scoped>
-  .siderStyle,
-  .contentStyle {
-    min-height: 100vh; /* 100% of the viewport height */
-  }
-.main{
+.siderStyle,
+.contentStyle {
+  min-height: 100vh;
+  /* 100% of the viewport height */
+}
+
+.main {
   /* 将 div.main 设为全屏 */
-  height: 100%; /* 100% viewport height */
-  width: 100%; /* 100% viewport width */
+  height: 100%;
+  /* 100% viewport height */
+  width: 100%;
+  /* 100% viewport width */
   display: flex;
   flex-direction: column;
 }

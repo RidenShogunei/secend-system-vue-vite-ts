@@ -1,6 +1,6 @@
 <template>
     <a-card class="com">
-        <a-carousel :after-change="onChange">
+        <a-carousel>
             <div v-for="(datas, index) in data" :key="index" class="detile">
                 <a-descriptions title="展示角色信息">
                     <a-descriptions-item label="名称">{{ datas.name }}</a-descriptions-item>
@@ -17,10 +17,6 @@
 </template>
 
 <script lang="ts" setup>
-import { LeftCircleOutlined, RightCircleOutlined } from '@ant-design/icons-vue';
-import { computed } from 'vue';
-import { useStore } from 'vuex';
-
 const store = useStore();
 const data = computed(() => {
     if (store.state.response && Array.isArray(store.state.response.displayAvatars)) {
@@ -37,7 +33,6 @@ const data = computed(() => {
         }];
     }
 });
-const size: number = data.value.length;
 </script>
 
 <style scoped>
