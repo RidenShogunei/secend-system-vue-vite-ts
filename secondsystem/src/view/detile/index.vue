@@ -22,7 +22,3 @@ const data = computed(() => {
     }
 });
 </script>
-
-<style scoped>
-
-</style>

@@ -34,11 +34,11 @@ const dynamicComponent = computed(() => {
     case '3':
       return defineAsyncComponent(() => import('../view/starrailrole/index.vue'))
     case '4':
-      return defineAsyncComponent(() => import('../view/detile/index.vue'))
+      return defineAsyncComponent(() => import('../components/waitPage.vue'))
     case '5':
       return defineAsyncComponent(() => import('../view/stock/index.vue'))
     default:
-      return defineAsyncComponent(() => import('../view/detile/index.vue'))
+      return defineAsyncComponent(() => import('../components/waitPage.vue'))
   }
 })
 </script>

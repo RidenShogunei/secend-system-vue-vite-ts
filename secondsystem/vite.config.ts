@@ -15,6 +15,7 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
         "@": pathSrc,
       },
     },
+    base: './',
     plugins: [
       vue(),
       AutoImport({
