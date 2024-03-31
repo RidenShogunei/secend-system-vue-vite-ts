@@ -37,14 +37,18 @@ const props = withDefaults(defineProps<{
 }>(), {})
 
 const { stock } = toRefs(props)
-function formatDateString(dateString:string) {
-  // 20240329161451 -> 2024/03/29 16:14:51
-  const year = dateString.slice(0, 4);
-  const month = dateString.slice(4, 6);
-  const day = dateString.slice(6, 8);
-  const hour = dateString.slice(8, 10);
-  const minute = dateString.slice(10, 12);
-  const second = dateString.slice(12,14);
-  return `${year}/${month}/${day} ${hour}:${minute}:${second}`;
+function formatDateString(dateString: string | null | undefined) {
+  if (typeof dateString === 'string' && dateString.length >= 14) {
+    const year = dateString.slice(0, 4);
+    const month = dateString.slice(4, 6);
+    const day = dateString.slice(6, 8);
+    const hour = dateString.slice(8, 10);
+    const minute = dateString.slice(10, 12);
+    const second = dateString.slice(12,14);
+    return `${year}/${month}/${day} ${hour}:${minute}:${second}`;
+  } else {
+    console.error('Invalid dateString: ', dateString);
+    return 'Invalid date';
+  }
 }
 </script>

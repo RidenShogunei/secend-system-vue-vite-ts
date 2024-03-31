@@ -20,7 +20,7 @@ import {
 const store = useStore();
 
 const handleSelect = ({ key }: { key: string }) => {
-  store.commit('updatePage', key);
+    store.commit('updatePage', key);
 };
 const state = reactive({
     collapsed: false,
@@ -34,47 +34,28 @@ const items = reactive([
         label: "原神文本搜索",
         title: "原神文本搜索",
     },
-    {
-        key: "2",
-        label: "星铁文本搜索",
-        title: "星铁文本搜索",
-    },
+
     {
         key: "sub1",
         label: "铁道区",
         title: "铁道区",
         children: [
             {
+                key: "2",
+                label: "星铁文本搜索",
+                title: "星铁文本搜索",
+            },
+            {
                 key: "3",
                 label: "星穹铁道账号查询",
                 title: "星穹铁道账号查询",
             },
-            {
-                key: "4",
-                label: "角色详细信息",
-                title: "角色详细信息",
-            },
         ],
     },
     {
-        key: "5",
+        key: "4",
         label: "股票展示",
         title: "股票展示",
-    },
-    {
-        key: "6",
-        label: "英汉语录",
-        title: "英汉语录",
-    },
-    {
-        key: "7",
-        label: "个人中心",
-        title: "个人中心",
-    },
-    {
-        key: "8",
-        label: "留言区",
-        title: "留言区",
     },
 ]);
 watch(

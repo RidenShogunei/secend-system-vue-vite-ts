@@ -1,6 +1,6 @@
 <template>
 <div class="show">
-    <WaitPage></WaitPage>
+    
 </div>
 </template>
 
